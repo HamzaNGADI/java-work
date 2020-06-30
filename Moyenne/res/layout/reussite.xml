@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Felicitation ! vous avez reussis !"
+        android:gravity="center_horizontal"
+        android:textColor="#00ff00"
+        android:textSize="30px"
+         />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Votre moyenne est :"
+        android:gravity="center_horizontal"
+        android:textSize="25px"
+        
+         />
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Moyenne"
+        android:gravity="center_horizontal"
+        android:textSize="20px"
+        android:id="@+id/reuss"
+       
+         />
+
+</LinearLayout>

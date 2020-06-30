@@ -1,0 +1,10 @@
+ngfvc 12.5
+
+ngfvcd 10.0
+
+ngfvcde 17.0
+
+ngfvcder 8.5
+
+jhgf 16.0
+

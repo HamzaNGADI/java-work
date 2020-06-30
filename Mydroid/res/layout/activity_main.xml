@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="example.com.mydroid.MainActivity"
+    android:orientation="vertical"
+     >
+<TabHost 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tabhost"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+        <TabWidget 
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@android:id/tabs" ></TabWidget>
+        <FrameLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@android:id/tabcontent">
+            
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:orientation="vertical"
+             android:id="@+id/onglet1"
+             android:scrollbars="vertical"
+             >
+             <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/noneit"
+               android:text="@string/hello_world"/>
+            <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="my Button"
+               android:id="@+id/button" /> 
+         </LinearLayout>  
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:orientation="vertical"
+             android:id="@+id/onglet2"
+          
+             >
+            <Button
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="my Button2"
+               android:id="@+id/buttonno" /> 
+            <EditText 
+               android:layout_width="fill_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/ed2" />
+         </LinearLayout>   
+         <LinearLayout
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent"
+             android:orientation="vertical"
+             android:id="@+id/onglet3"
+          
+             >
+            <CheckBox 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="my check thing"
+               android:id="@+id/chkb"
+               />
+         </LinearLayout>
+            
+        </FrameLayout>     
+    </LinearLayout>
+    
+</TabHost>
+    
+<SlidingDrawer
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:id="@+id/srlv"
+    android:content="@+id/angscrl"
+    android:handle="@+id/handle"
+    >
+    <ImageView
+ android:id="@+id/handle"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:src="@drawable/ic_launcher"
+ 
+ />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/angscrl"
+        >
+     <Button
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="buttscrl"
+       android:id="@+id/buttscrl" /> 
+      <TextView
+        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/txtscr"
+        android:text="im a scroll"/>
+    </LinearLayout>
+</SlidingDrawer>  
+
+</LinearLayout>
