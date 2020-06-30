@@ -1,0 +1,25 @@
+	   Box b = new Box(1,1,1);
+	   Geometry g = new Geometry("boxi",b);
+	   g.setLocalTranslation(new Vector3f(1,-1,1));
+	   Material mat = new Material(assetManager,"Common/MatDefs/Misc/Unshaded.j3md");
+	   mat.setColor("Color", ColorRGBA.Red);
+	   g.setMaterial(mat);
+	   
+	   Box bb = new Box(1,1,1);
+	   Geometry gg = new Geometry("boxmap",bb);
+	   gg.setLocalTranslation(new Vector3f(1,3,1));
+	   Material matt = new Material(assetManager,"Common/MatDefs/Misc/Unshaded.j3md");
+	   matt.setColor("Color", ColorRGBA.Green);
+	   gg.setMaterial(matt);
+	   
+	   Node pv = new Node("pivot");
+	   
+	   pv.attachChild(g);  pv.attachChild(gg);
+//	   pv.rotate(.4f, .4f, .1f);
+	   g.setLocalRotation(new Matrix3f(2,-1 ,1, speed, speed, speed, speed, speed, speed));
+	   gg.setLocalRotation(new Matrix3f(-2,1 ,-1, speed, speed, speed, speed, speed, speed));
+	   gg.move(new Vector3f(-2,1,2));
+	   
+	   rootNode.attachChild(pv);
+	    for(int i=0;i<pv.getChildren().size();i++)  System.out.println(pv.getChild(i).getName()+""); 
+
