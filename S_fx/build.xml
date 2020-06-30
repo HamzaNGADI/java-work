@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="build.xml" basedir="." >
+    
+    <property name="src.dir" value="src"/>
+    <property name="obj.dir" value="bin"/>
+    
+    <target name="clean" description="Clean build directories">
+      <echo message= "Suppression des fichiers issus de la compilation" />
+      <delete dir="${obj.dir}"/>
+     
+        
+    </target>
+   
+    
+    <path id="class.path">
+  <fileset dir="C:/Users/PackardBell/Downloads/jfreechart-1.0.19/jfreechart-1.0.19/lib/"> <!-- sii ya des jar externe -->
+    <include name="*.jar" />
+  </fileset>
+</path>
+
+    <target name="createdir" depends="clean">
+        <mkdir dir="${obj.dir}"/>
+    </target>
+    
+    <target name="compile" description="" depends="createdir">
+       <javac
+           srcdir="${src.dir}"
+           destdir="${obj.dir}"
+           source="1.8"
+           
+           includeantruntime="false"
+           fork="true" 
+        > 
+            <classpath refid="class.path" />  <!-- sii ya des jar externe -->
+           
+        </javac>    
+
+    </target>
+    
+    <target name="jar" depends="compile">
+        <jar destfile="project.jar">
+            <fileset dir="${src.dir}" />
+          <fileset dir="${obj.dir}" includes="*.class" />
+ 		   <zipgroupfileset dir="C:/Users/PackardBell/Downloads/jfreechart-1.0.19/jfreechart-1.0.19/lib/" includes="*.jar" /> <!-- sii ya des jar externe -->
+          
+          
+           <manifest>
+                 <attribute name="Built-By" value="hamza" />
+                 <attribute name="Implementation-Title" value="Mon projet" />
+                 <attribute name="Main-Class" value="S_fx" />
+                 <attribute name="Built-Date" value="08/04/17" />
+          </manifest>
+         </jar>
+        
+    </target>       
+    
+    <target name="run" depends="compile" description="" >
+            <java classname="S_fx"  fork="true" >
+               <classpath path="${obj.dir}" />
+                <classpath refid="class.path" />  <!-- sii ya des jar externe -->
+            </java>
+    </target>
+    
+</project>

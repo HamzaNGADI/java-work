@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build.xml" basedir="." >
+    
+    <property name="src.dir" value="src"/>
+    <property name="obj.dir" value="bin"/>
+    
+    <target name="clean" description="Clean build directories">
+      <echo message= "Suppression des fichiers issus de la compilation" />
+      <delete dir="${obj.dir}"/>
+      <delete dir="${src.dir}"/>
+        
+    </target>
+   
+
+    <target name="createdir" depends="clean">
+        <mkdir dir="${obj.dir}"/>
+        <mkdir dir="${src.dir}"/>
+    </target>
+    <target name="copy" depends="createdir">
+        <copydir dest="${src.dir}" src="C:/Users/PackardBell/Documents/java project's/tetrisAnt/fr/isen/tetris/"/>
+        
+    </target>
+    
+    <target name="compile" description="" depends="copy">
+       <javac
+           srcdir="${src.dir}"
+           destdir="${obj.dir}"
+           source="1.8"
+           classpath="C:/Users/PackardBell/Downloads/TetrisGit/Tetris/lib/commons-lang3-3.4.jar"
+           
+           includeantruntime="false"
+           fork="true" 
+        />    
+
+    </target>
+    
+    <target name="jar" depends="compile">
+        <jar destfile="Tetris.jar">
+            <fileset dir="${src.dir}/">
+           </fileset>
+          <fileset dir="${obj.dir}" />
+          <fileset dir="C:/Users/PackardBell/Downloads/TetrisGit/Tetris/lib/" includes="commons-lang3-3.4.jar" />
+          
+           <manifest>
+                 <attribute name="Built-By" value="hamza" />
+                 <attribute name="Implementation-Title" value="Mon projet" />
+                 <attribute name="Main-Class" value="fr.isen.tetris.Tetris" />
+                 <attribute name="Built-Date" value="26/01/17" />
+          </manifest>
+ </jar>
+        
+    </target>
+    
+    <target name="dist" description="" >
+
+    </target>
+    
+</project>
