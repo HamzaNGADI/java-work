@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   
+    tools:context="com.example.colorfinder.GameActivity" 
+    android:weightSum="100"
+    android:orientation="vertical"
+    >
+
+      <LinearLayout 
+    android:id="@+id/lhaut"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="50"
+    android:background="#EE1010"
+    android:orientation="vertical" 
+    android:gravity="center"
+      >
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#112233"
+        android:textStyle="bold"
+        android:text="---"
+        android:gravity="center_horizontal|center_vertical"
+      android:textAllCaps="false"
+        />  
+            
+   <Button
+           android:id="@+id/butt"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="click me" 
+           android:gravity="center_horizontal|center_vertical"
+             />
+            
+   </LinearLayout>
+       
+   <LinearLayout 
+    android:id="@+id/lbas"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="50"
+    android:background="#6F00FF"
+    android:orientation="vertical" 
+      >
+       
+       <TextView
+        android:id="@+id/txtscrs"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textColor="#112233"
+        android:textStyle="bold"
+        android:text=""
+        android:gravity="center"
+        android:layout_marginTop="9dp" /> 
+   </LinearLayout>
+  
+</LinearLayout>
