@@ -1,0 +1,52 @@
+module server {
+
+    exception numeroInconnu {};
+	exception dejaExistant {};
+
+
+        enum type_abonnement {forfait, consommation};
+
+        struct type_adresse {
+            long numero;
+            string rue;
+            long code_postal;
+            string ville;
+        };
+
+
+	interface abonne {
+
+		readonly attribute long numero;
+		readonly attribute string nom_prenom;
+
+                attribute type_abonnement abonnement;
+                attribute type_adresse    adresse;
+	};
+
+
+        typedef sequence<abonne> table_abonne;
+
+	
+	interface gestionabonnes{
+
+  		readonly attribute table_abonne liste_abonnes;
+	
+		void creation_abonne(in long numero,
+		        in string nom,
+			    in string prenom,
+ 			    in type_adresse adresse,
+                            in type_abonnement abonnement,
+			    inout abonne ref)
+			raises (dejaExistant);
+
+		void resilier_abonne(in long numero)
+			raises (numeroInconnu);
+
+		void rechercher_abonne(in long numero,
+				inout abonne ref)
+			raises (numeroInconnu);
+		
+	  };
+
+	
+};

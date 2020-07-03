@@ -1,0 +1,25 @@
+module server {
+
+     enum famille {revue, livre, bd, cd, dvd}; 
+
+      typedef sequence <string> liste_string;
+
+      interface ouvrage { 
+         readonly attribute string titre; 
+         attribute string auteurs;
+         attribute liste_string mots_clefs;     
+         attribute famille famille_ouvrage; 
+      };
+
+      typedef sequence <ouvrage> liste_ouvrage;
+
+      exception non_trouve{}; 
+      exception deja_trouve{}; 
+
+      interface bibliotheque { 
+         readonly attribute liste_ouvrage tous_les_ouvrages;
+         ouvrage ajouter_ouvrage (in string titre) raises (deja_trouve); 
+         void rechercher_ouvrage (inout liste_ouvrage l, in string mot)  raises (non_trouve); 
+      };
+	
+};

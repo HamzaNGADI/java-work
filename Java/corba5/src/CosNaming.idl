@@ -1,0 +1,11 @@
+module CosNaming {
+
+	interface  etudiant {
+
+		readonly attribute string nom;
+		readonly attribute string prenom;
+
+	};
+
+  
+};

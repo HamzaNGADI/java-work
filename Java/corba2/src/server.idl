@@ -1,0 +1,25 @@
+module server {
+
+module exo2 {
+
+        exception divisionParZero {};
+
+
+        interface calcul  {
+
+                readonly attribute double memoire;
+                
+                void ajouteMemoire(in double donnee);
+                void soustraitMemoire(in double donnee);
+                void multiplieMemoire(in double donnee);
+                void miseAZero();
+
+                void diviseMemoire(in double donnee) raises (divisionParZero); 
+
+                void incrementer(inout long data);
+                void decrementer(inout long data);
+
+        };
+  };
+	
+};
